@@ -34,6 +34,12 @@
   <PropertyGroup>
     <ApplicationIcon>ibood.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>iBoodHuntChecker.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,6 +87,7 @@
     <EmbeddedResource Include="ShowOffer.resx">
       <DependentUpon>ShowOffer.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="iBoodHuntChecker.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

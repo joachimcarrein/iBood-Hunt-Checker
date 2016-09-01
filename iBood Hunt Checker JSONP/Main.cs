@@ -14,6 +14,7 @@ namespace iBood_Hunt_Checker
         public Main()
         {
             InitializeComponent();
+            LoadOldSettings();
         }
         #endregion
 
@@ -89,6 +90,17 @@ namespace iBood_Hunt_Checker
                 MessageBox.Show(ex.ToString(), "", 0, MessageBoxIcon.Error);
             }
             setShopText();
+        }
+
+        private void LoadOldSettings()
+        {
+            if (Properties.Settings.Default.ReloadOldSettings)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.ReloadOldSettings = false;
+                Properties.Settings.Default.Save();
+            }
+            Properties.Settings.Default.Reload();
         }
         #endregion
 

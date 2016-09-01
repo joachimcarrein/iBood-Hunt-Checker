@@ -232,5 +232,17 @@ namespace iBood_Hunt_Checker.Properties {
                 return ((string)(this["StockEnd"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReloadOldSettings {
+            get {
+                return ((bool)(this["ReloadOldSettings"]));
+            }
+            set {
+                this["ReloadOldSettings"] = value;
+            }
+        }
     }
 }
