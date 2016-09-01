@@ -114,11 +114,11 @@ namespace iBood_Hunt_Checker.Helpers
 
         private string InterpretValue(string Value, string StartTag, string EndTag)
         {
+
+            Value = ChangeEncoding(Value, Encoding.Default, Encoding.UTF8);
+
             if ((String.IsNullOrEmpty(StartTag)) & (String.IsNullOrEmpty(EndTag)))
                 return WebUtility.HtmlDecode(Value);
-
-            StartTag = ChangeEncoding(StartTag, Encoding.UTF8, Encoding.Default);
-            EndTag = ChangeEncoding(EndTag, Encoding.UTF8, Encoding.Default);
 
             int startPos = 0;
             int endPos = Value.Length;
