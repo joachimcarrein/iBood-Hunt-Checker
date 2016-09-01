@@ -43,3 +43,4 @@ Description of properties. Except for country code should all be set OK.
 
 User Specific settings:
 - CheckInterval: default 5 seconds, can be changed in the program
+- ReloadOldSettings: Background setting to upgrade older version custom user settings
