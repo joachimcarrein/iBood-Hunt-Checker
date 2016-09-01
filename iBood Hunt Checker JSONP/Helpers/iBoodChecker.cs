@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Web.Script.Serialization;
 
@@ -116,19 +117,28 @@ namespace iBood_Hunt_Checker.Helpers
             if ((String.IsNullOrEmpty(StartTag)) & (String.IsNullOrEmpty(EndTag)))
                 return WebUtility.HtmlDecode(Value);
 
+            StartTag = ChangeEncoding(StartTag, Encoding.UTF8, Encoding.Default);
+            EndTag = ChangeEncoding(EndTag, Encoding.UTF8, Encoding.Default);
+
             int startPos = 0;
             int endPos = Value.Length;
 
             if (!String.IsNullOrEmpty(StartTag))
-                startPos = Value.ToUpper().IndexOf(StartTag.ToUpper()) + StartTag.Length;
+                startPos = Value.IndexOf(StartTag, StringComparison.OrdinalIgnoreCase) + StartTag.Length;
 
             if (!String.IsNullOrEmpty(EndTag))
-                endPos = Value.Substring(startPos).ToUpper().IndexOf(EndTag.ToUpper());
+                endPos = Value.Substring(startPos).IndexOf(EndTag, StringComparison.OrdinalIgnoreCase);
 
             if (endPos == -1)
                 return "";
 
             return WebUtility.HtmlDecode(Value.Substring(startPos, endPos));
+        }
+
+        private string ChangeEncoding(string source, Encoding sourceEncoding, Encoding targetEncoding)
+        {
+            var bytes = sourceEncoding.GetBytes(source);
+            return targetEncoding.GetString(bytes);
         }
     }
 }
