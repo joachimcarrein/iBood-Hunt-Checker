@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SubSites>
+  <SubSite>
+    <ID>IBOOD</ID>
+    <Text></Text>
+  </SubSite>
+  <SubSite>
+    <ID>Home and Living</ID>
+    <Text>home-living-</Text>
+  </SubSite>
+  <SubSite>
+    <ID>Health and Beauty</ID>
+    <Text>health-beauty-</Text>
+  </SubSite>
+  <SubSite>
+    <ID>Extra</ID>
+    <Text>extra-</Text>
+  </SubSite>
+</SubSites>
