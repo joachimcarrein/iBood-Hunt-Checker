@@ -6,7 +6,7 @@
       <Value Profile="(Default)">http://feeds.ibood.com/{0}be/nl/offer.json</Value>
     </Setting>
     <Setting Name="StockLocation" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://feeds.ibood.com/be/stock.json</Value>
+      <Value Profile="(Default)">http://feeds.ibood.com/be/front-stock.json</Value>
     </Setting>
     <Setting Name="CheckInterval" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">5</Value>
