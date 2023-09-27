@@ -21,7 +21,6 @@ namespace iBood_Hunt_Checker
         #region Events
         private void Main_Load(object sender, EventArgs e)
         {
-            LoadComboBos();
             CheckiBood();
             iBoodChecker.iBoodCheckerInstance.iBoodChanged += iBoodChecker_iBoodChanged;
             Timer.Start();
@@ -54,10 +53,6 @@ namespace iBood_Hunt_Checker
         {
             ShowAgain();
         }
-        private void SubSitesComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            setShopText();
-        }
         void iBoodChecker_iBoodChanged(object sender, EventArgs e)
         {
             ShowAgain();
@@ -74,23 +69,6 @@ namespace iBood_Hunt_Checker
         #endregion
 
         #region Loaders
-        private void LoadComboBos()
-        {
-            string SubSitesXML = Application.StartupPath + @"\SubSites.XML";
-
-            try
-            {
-                iBoodChecker.iBoodCheckerInstance.CurrentSubSites = new DataSet();
-                iBoodChecker.iBoodCheckerInstance.CurrentSubSites.ReadXml(SubSitesXML);
-                SubSitesComboBox.DataSource = iBoodChecker.iBoodCheckerInstance.CurrentSubSites.Tables[0];
-                SubSitesComboBox.DisplayMember = "ID";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "", 0, MessageBoxIcon.Error);
-            }
-            setShopText();
-        }
 
         private void LoadOldSettings()
         {
@@ -150,10 +128,6 @@ namespace iBood_Hunt_Checker
                 ShowOffer so = new ShowOffer();
                 so.Show();
             }
-        }
-        private void setShopText()
-        {
-            iBoodChecker.iBoodCheckerInstance.ShopText = iBoodChecker.iBoodCheckerInstance.CurrentSubSites.Tables[0].Rows[SubSitesComboBox.SelectedIndex]["Text"].ToString();
         }
         private void CheckiBood()
         {

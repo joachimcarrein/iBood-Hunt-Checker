@@ -38,7 +38,6 @@
             this.ShowCurrentofferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubSitesComboBox = new System.Windows.Forms.ComboBox();
             this.nudInterval = new System.Windows.Forms.NumericUpDown();
             this.Label1 = new System.Windows.Forms.Label();
             this.lblTimeSinceLastCheck = new System.Windows.Forms.Label();
@@ -110,21 +109,10 @@
             this.ExitToolStripMenuItem.Text = "&Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // SubSitesComboBox
-            // 
-            this.SubSitesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SubSitesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SubSitesComboBox.FormattingEnabled = true;
-            this.SubSitesComboBox.Location = new System.Drawing.Point(12, 12);
-            this.SubSitesComboBox.Name = "SubSitesComboBox";
-            this.SubSitesComboBox.Size = new System.Drawing.Size(190, 21);
-            this.SubSitesComboBox.TabIndex = 8;
-            this.SubSitesComboBox.SelectedIndexChanged += new System.EventHandler(this.SubSitesComboBox_SelectedIndexChanged);
-            // 
             // nudInterval
             // 
             this.nudInterval.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::iBood_Hunt_Checker.Properties.Settings.Default, "CheckInterval", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.nudInterval.Location = new System.Drawing.Point(132, 39);
+            this.nudInterval.Location = new System.Drawing.Point(134, 7);
             this.nudInterval.Maximum = new decimal(new int[] {
             3600,
             0,
@@ -140,7 +128,7 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Label1.Location = new System.Drawing.Point(10, 41);
+            this.Label1.Location = new System.Drawing.Point(12, 9);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(105, 13);
             this.Label1.TabIndex = 10;
@@ -151,7 +139,7 @@
             this.lblTimeSinceLastCheck.AutoSize = true;
             this.lblTimeSinceLastCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblTimeSinceLastCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeSinceLastCheck.Location = new System.Drawing.Point(133, 71);
+            this.lblTimeSinceLastCheck.Location = new System.Drawing.Point(135, 39);
             this.lblTimeSinceLastCheck.Name = "lblTimeSinceLastCheck";
             this.lblTimeSinceLastCheck.Size = new System.Drawing.Size(14, 13);
             this.lblTimeSinceLastCheck.TabIndex = 15;
@@ -161,7 +149,7 @@
             // 
             this.Label2.AutoSize = true;
             this.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Label2.Location = new System.Drawing.Point(14, 71);
+            this.Label2.Location = new System.Drawing.Point(16, 39);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(111, 13);
             this.Label2.TabIndex = 14;
@@ -170,7 +158,7 @@
             // btnShowAgain
             // 
             this.btnShowAgain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnShowAgain.Location = new System.Drawing.Point(13, 126);
+            this.btnShowAgain.Location = new System.Drawing.Point(15, 94);
             this.btnShowAgain.MaximumSize = new System.Drawing.Size(194, 23);
             this.btnShowAgain.MinimumSize = new System.Drawing.Size(194, 23);
             this.btnShowAgain.Name = "btnShowAgain";
@@ -183,7 +171,7 @@
             // btnCheck
             // 
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCheck.Location = new System.Drawing.Point(13, 97);
+            this.btnCheck.Location = new System.Drawing.Point(15, 65);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(194, 23);
             this.btnCheck.TabIndex = 12;
@@ -200,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 161);
+            this.ClientSize = new System.Drawing.Size(215, 131);
             this.ContextMenuStrip = this.NotifyMenu;
             this.Controls.Add(this.lblTimeSinceLastCheck);
             this.Controls.Add(this.Label2);
@@ -208,11 +196,10 @@
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.nudInterval);
             this.Controls.Add(this.Label1);
-            this.Controls.Add(this.SubSitesComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(231, 199);
+            this.MinimumSize = new System.Drawing.Size(231, 170);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iBood Hunt Checker";
@@ -228,7 +215,6 @@
         #endregion
 
         private System.Windows.Forms.NotifyIcon NotifyIcon;
-        internal System.Windows.Forms.ComboBox SubSitesComboBox;
         internal System.Windows.Forms.ContextMenuStrip NotifyMenu;
         internal System.Windows.Forms.ToolStripMenuItem ShowFormToolStripMenuItem;
         internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem1;

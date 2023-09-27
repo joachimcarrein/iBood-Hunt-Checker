@@ -106,9 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ibood.ico" />
-    <Content Include="SubSites.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
