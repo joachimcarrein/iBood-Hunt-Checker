@@ -6,10 +6,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Security.Policy;
 using System.Text;
-using System.Threading;
-using System.Web.Script.Serialization;
 
 namespace iBood_Hunt_Checker.Helpers
 {
