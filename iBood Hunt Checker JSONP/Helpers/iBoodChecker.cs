@@ -54,7 +54,7 @@ namespace iBood_Hunt_Checker.Helpers
             {
                 Debug.WriteLine("Running check");
 
-                var url = new Uri("https://api.ibood.io/search/hunt");
+                var url = new Uri("https://api.ibood.io/event/events/live");
 
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -67,7 +67,7 @@ namespace iBood_Hunt_Checker.Helpers
                 {
                     var json = response.Content.ReadAsStringAsync().Result;
                     dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-                    CheckDownloadedDataFromApi(obj.data.items[0].hunt);
+                    CheckDownloadedDataFromApi(obj.data.items[0].currentItem);
                 }
             }
             catch (Exception ex)
@@ -84,10 +84,10 @@ namespace iBood_Hunt_Checker.Helpers
 
         private void CheckDownloadedDataFromApi(dynamic huntInfo)
         {
-            var url = $"https://www.ibood.com/offers/nl/s-be/o/{huntInfo.slug}/{huntInfo.classicOfferId}";
+            var url = $"https://www.ibood.com/offers/nl/s-be/o/{huntInfo.slug}/{huntInfo.offerItemClassicId}";
 
             iBoodOffer newOffer = new iBoodOffer();
-            newOffer.ID = huntInfo.classicOfferId;
+            newOffer.ID = huntInfo.offerItemClassicId;
             newOffer.Description = huntInfo.title;
             newOffer.PermaLink = url;
             newOffer.ImageURL = huntInfo.image;            
