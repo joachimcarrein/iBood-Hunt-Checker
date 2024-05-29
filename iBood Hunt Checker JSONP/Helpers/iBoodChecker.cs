@@ -85,12 +85,14 @@ namespace iBood_Hunt_Checker.Helpers
         private void CheckDownloadedDataFromApi(dynamic huntInfo)
         {
             var url = $"https://www.ibood.com/offers/nl/s-be/o/{huntInfo.slug}/{huntInfo.offerItemClassicId}";
+            var imageBase64 = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"gs://ibood-go-production-gcs-storage/images/source/{huntInfo.image.id}.{huntInfo.image.extension}"));
+            var imageUrl = $"https://image.ibood.io/image/w1920a4-3/{imageBase64}";
 
             iBoodOffer newOffer = new iBoodOffer();
             newOffer.ID = huntInfo.offerItemClassicId;
             newOffer.Description = huntInfo.title;
             newOffer.PermaLink = url;
-            newOffer.ImageURL = huntInfo.image;            
+            newOffer.ImageURL = imageUrl;            
             newOffer.OldPrice = huntInfo.referencePrice.value;
             newOffer.NewPrice = huntInfo.price.value;          
 
