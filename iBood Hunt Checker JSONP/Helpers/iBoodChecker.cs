@@ -60,13 +60,13 @@ namespace iBood_Hunt_Checker.Helpers
             {
                 Debug.WriteLine("Running check");
 
-                var url = new Uri("https://api.ibood.io/event/events/live");
+                var url = "https://api.ibood.io/event/events/live";
 
                 XmlDocument apiHeaders;
                 using (var wc = new WebClient())
                 {
                     apiHeaders = new XmlDocument();
-                    wc.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
+                    wc.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.BypassCache);
                     apiHeaders.LoadXml(wc.DownloadString("https://raw.githubusercontent.com/joachimcarrein/iBood-Hunt-Checker/refs/heads/master/iBood%20Hunt%20Checker%20JSONP/Settings/ApiSettings.xml"));
                 }
 
