@@ -2,9 +2,11 @@
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Security.Claims;
 using System.Security.Policy;
 using System.Xml;
@@ -67,7 +69,12 @@ namespace iBood_Hunt_Checker.Helpers
                 {
                     apiHeaders = new XmlDocument();
                     wc.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.BypassCache);
+#if DEBUG
+                    var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Settings\ApiSettings.xml");
+                    apiHeaders.LoadXml(wc.DownloadString(path));
+#else
                     apiHeaders.LoadXml(wc.DownloadString("https://raw.githubusercontent.com/joachimcarrein/iBood-Hunt-Checker/refs/heads/master/iBood%20Hunt%20Checker%20JSONP/Settings/ApiSettings.xml"));
+#endif                 
                 }
 
                 HttpClientHandler handler = new HttpClientHandler();
